@@ -6,8 +6,10 @@ import leaf from "../../Assets/Projects/leaf.png";
 import emotion from "../../Assets/Projects/emotion.png";
 import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
+import bureauDesLegendes from "../../Assets/Projects/bureau-des-legendes.png";
 import suicide from "../../Assets/Projects/suicide.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
+import prospectix from "../../Assets/Projects/prospectix.png";
 
 function Projects() {
   return (
@@ -18,28 +20,28 @@ function Projects() {
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here the projects I have worked on.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={prospectix}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Prospectix"
+              description='Prospectix is a CRM Software built to allow project managers to telemarket for the goal of the company. Built in AngularJS & NestJS, it is a complete powerful tool that is very usefull for small companies that rely on prospection to find new clients. I built this tool for the "Junior-Entreprise" Junior ISEP, in which I worked as a Tech Lead.'
+              ghLink="https://github.com/avznog/prospectix"
+              demoLink="https://prospectix.bgonzva.com/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={bureauDesLegendes}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="Bureau des Légendes"
+              description="Bureau des Légendes is a mobile app created in ReactJS & NestJS. The goal is to prevent harrasment, burn-out and other problems that can occur at work. Each member of a team can fill out forms, created by the Manager and reviewed by a HR."
+              ghLink="https://github.com/avznog/bureau-des-legendes"
+              demoLink="https://bureau-des-legendes.bgonzva.com/"
             />
           </Col>
 
