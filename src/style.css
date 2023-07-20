@@ -327,7 +327,7 @@ button:focus {
 
 .myAvtar {
   justify-content: center !important;
-  padding-top: 5em !important;
+  margin-bottom: 50em !important;
 }
 
 @media (max-width: 767px) {
@@ -568,6 +568,39 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+}
+
+.about-rocket-image {
+  width: 300px
+}
+
+.about-tea-cup-image {
+  margin-top: 200px;
+  margin-left: 100px;
+  width: 150px;
+}
+
+.about-wifi-image {
+  width: 200px;
+}
+
+@media (max-width: 767px) {
+  .about-rocket-image {
+    width: 200px !important;
+    margin-left: 50px !important;
+  }
+
+  .about-tea-cup-image {
+    margin-top: 0px !important;
+    margin-left: 150px !important;
+    width: 100px !important;
+  }
+
+  .about-wifi-image {
+    width: 150px;
+    margin-top: -200px !important;
+    margin-right: 150px !important;
+  }
 }
 
 .tech-icons {

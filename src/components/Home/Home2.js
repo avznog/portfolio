@@ -1,13 +1,12 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/boy-dynamic-color.png";
-import Tilt from "react-parallax-tilt";
+import { Col, Container, Row } from "react-bootstrap";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
+  AiFillInstagram
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import Tilt from "react-parallax-tilt";
+import myImg from "../../Assets/Benj-without-back.png";
 
 function Home2() {
   return (
@@ -51,7 +50,7 @@ function Home2() {
               </i>
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={4} className="">
             <Tilt>
               <img src={myImg} className="img-fluid" alt="avatar" />
             </Tilt>
