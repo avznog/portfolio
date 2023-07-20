@@ -38,7 +38,8 @@ function Home() {
                   src={homeLogo}
                   alt="home pic"
                   className="img-fluid"
-                  style={{ minHeight: "450px", minWidth: "450px" }}
+                  class="home-computer-image"
+                  
                 />
                 </Col>
                 <Col md={5}>
@@ -46,7 +47,7 @@ function Home() {
                   src={mobileLogo}
                   alt="home pic"
                   className="img-fluid"
-                  style={{ minHeight: "100px", minWidth: "100px" }}
+                  class="home-phone-image"
                   />
                   </Col>
               </Row>

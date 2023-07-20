@@ -250,6 +250,26 @@ button:focus {
   height: 100%;
 }
 
+.home-computer-image {
+  width: 450px;
+  height: 450px;
+}
+
+.home-phone-image {
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width: 767px) {
+  .home-computer-image {
+   display: none !important;
+  }
+
+  .home-phone-image {
+    display: none !important;
+  }
+}
+
 .home-header {
   padding-top: 80px !important;
 }
