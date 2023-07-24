@@ -10,7 +10,8 @@ import {
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
 
-import { CgFileDocument } from "react-icons/cg";
+import { CgFileDocument, CgHome, CgHomeAlt, CgHomeScreen } from "react-icons/cg";
+import { ImHome2 } from "react-icons/im";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -35,7 +36,8 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+          {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
+          <ImHome2></ImHome2>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -85,16 +87,6 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
 

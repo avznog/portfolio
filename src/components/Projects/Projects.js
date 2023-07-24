@@ -2,10 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import bureauDesLegendes from "../../Assets/Projects/bureau-des-legendes.png";
 import cabinet from "../../Assets/Projects/cabinet.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import leaf from "../../Assets/Projects/leaf.png";
 import prospectix from "../../Assets/Projects/prospectix.png";
-import suicide from "../../Assets/Projects/suicide.png";
 import Particle from "../Particle";
 import ProjectCard from "./ProjectCards";
 

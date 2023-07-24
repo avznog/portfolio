@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { BsGithub } from "react-icons/bs";
 import {
   SiDebian,
   SiFigma,
@@ -16,15 +17,19 @@ function Toolstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiVisualstudiocode />
+        <div style={{fontSize: "19px"}}>VSCode</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiNotion />
+        <BsGithub />
+        <div style={{fontSize: "19px"}}>GitHub</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiDebian />
+        <div style={{fontSize: "19px"}}>Debian</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFigma />
+        <SiNotion />
+        <div style={{fontSize: "19px"}}>Notion</div>
       </Col>
     </Row>
   );
