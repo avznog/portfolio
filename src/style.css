@@ -57,7 +57,7 @@ button:focus {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: #6e44ff;
 }
 
 /* Handle */
@@ -78,7 +78,7 @@ button:focus {
 .sticky {
   background-color: #1b1a2ea9 !important;
   transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+  box-shadow: 0px 10px 10px 0px rgb(110,68,255, 0.171) !important;
   backdrop-filter: blur(15px) !important;
 }
 
@@ -144,7 +144,7 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #6e44ff !important;
+    background-color: #181a27 !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -194,7 +194,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: rgb(110,68,255);
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -370,6 +370,14 @@ button:focus {
   padding-inline-start: 0 !important;
 }
 
+.contact-links {
+  justify-content: center !important;
+  padding-top: 15px !important;
+  display: inline-block !important;
+  position: relative !important;
+  padding-inline-start: 0 !important;
+}
+
 .home-social-icons {
   position: relative !important;
   display: inline-block !important;
@@ -381,6 +389,12 @@ button:focus {
   background: rgba(255, 255, 255, 0.972) !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
+}
+
+.contact-icons {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 4rem !important;
 }
 
 .home-social-icons::before {
@@ -464,6 +478,15 @@ button:focus {
 /* --------- */
 /* Projects */
 /* --------- */
+
+.boy {
+  width: 700px;
+  position: absolute;
+  opacity: 0.1;
+  left: 0;
+  top: 1000;
+}
+
 .project-section {
   position: relative !important;
   padding-top: 150px !important;
@@ -544,8 +567,8 @@ button:focus {
 
 .btn-primary:hover {
   color: #fff !important;
-  background-color: rgb(110,68,255,0.5) !important;
-  border-color: rgb(110,68,255,0.5) !important;
+  background-color: rgb(110,68,255) !important;
+  border-color: rgb(110,68,255) !important;
 }
 .btn:focus {
   outline: none !important;

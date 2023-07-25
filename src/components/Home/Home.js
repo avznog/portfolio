@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import homeLogo from "../../Assets/computer-dynamic-color.png";
 import mobileLogo from "../../Assets/mobile-dynamic-color.png";
 import Particle from "../Particle";

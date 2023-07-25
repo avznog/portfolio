@@ -8,10 +8,9 @@ import {
   AiOutlineUser
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from "../Assets/logo.png";
 
-import { CgFileDocument, CgHome, CgHomeAlt, CgHomeScreen } from "react-icons/cg";
-import { ImHome2 } from "react-icons/im";
+import { CgFileDocument } from "react-icons/cg";
+import logo from "../Assets/logo.png";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -36,8 +35,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
-          <ImHome2></ImHome2>
+        <img src={logo} style={{width: "2.4em"}}/>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -77,6 +75,16 @@ function NavBar() {
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
 

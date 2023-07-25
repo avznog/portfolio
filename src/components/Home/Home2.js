@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import Tilt from "react-parallax-tilt";
-import myImg from "../../Assets/Benj-without-back.png";
+import myImg from "../../Assets/ben.png";
 
 function Home2() {
   return (
