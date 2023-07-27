@@ -36,7 +36,7 @@ function Home2() {
               </i>
               <br />
               <br />
-              I often like to develop products with
+              I often like to develop products
               with <b className="purple">Node.js</b> and
               <i>
                 <b className="purple">
