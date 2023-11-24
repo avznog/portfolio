@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import bureauDesLegendes from "../../Assets/Projects/bureau-des-legendes.png";
+import hippochat from "../../Assets/Projects/hippochat.webp";
 import cabinet from "../../Assets/Projects/cabinet.png";
 import prospectix from "../../Assets/Projects/prospectix.png";
 import medal from "../../Assets/medal-dynamic-color.png";
@@ -33,12 +33,14 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bureauDesLegendes}
+              imgPath={hippochat}
               isBlog={false}
-              title="Bureau des Légendes"
-              description="Bureau des Légendes is a mobile app created in ReactJS & NestJS. The goal is to prevent harrasment, burn-out and other problems that can occur at work. Each member of a team can fill out forms, created by the Manager and reviewed by a HR."
-              ghLink="https://github.com/avznog/bureau-des-legendes"
-            // demoLink="https://bureau-des-legendes.bgonzva.com/"
+              title="Hippochat"
+              description="Hippochat is a mobile app for long distance relationship. Built in Ionic & Angular / NestJS, its goal is to allow couples to share their moods and pictures eveyday. Avalaible on the Apple Store & Play Store."
+              ghLink="https://github.com/avznog/hippochat"
+              GPLink="http://play.google.com/hippochat"
+              appStoreLink="https://apps.apple.com/fr/app/hippochat"
+              demoLink="https://hippochat.bgonzva.com"
             />
           </Col>
 
@@ -47,9 +49,9 @@ function Projects() {
               imgPath={cabinet}
               isBlog={false}
               title="Cabinet d'Ormane Client"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
+              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage."
               // ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://apps.apple.com/fr/app/cabinet-dormane-client/id1561541184"
+              appStoreLink="https://apps.apple.com/fr/app/cabinet-dormane-client/id1561541184"
             />
           </Col>
 
