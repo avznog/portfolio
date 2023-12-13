@@ -38,7 +38,7 @@ function Projects() {
               title="Hippochat"
               description="Hippochat is a mobile app for long distance relationship. Built with Ionic & Angular / NestJS, its goal is to allow couples to share a mood and a picture everyday. Avalaible on the Apple Store & Play Store."
               ghLink="https://github.com/avznog/hippochat"
-              GPLink="http://play.google.com/hippochat"
+              GPLink="https://play.google.com/store/apps/details?id=com.bgonzva.hippochat"
               appStoreLink="https://apps.apple.com/fr/app/hippochat/id6467847457"
               demoLink="https://hippochat.bgonzva.com"
             />
