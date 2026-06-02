@@ -12,6 +12,10 @@ export const hero = {
   title: "Cloud / DevOps Engineer",
   statement:
     "Cloud / DevOps Engineer with 2+ years managing multi-cloud production infrastructure. Relocating to Israel (making aliyah) — seeking a role where I can bring my cloud-native expertise to a fast-moving engineering team, and contribute to Israel's growth.",
+  bio: [
+    "I'm a Cloud / DevOps Engineer with 2+ years operating multi-cloud production infrastructure at scale — administering 15 Kubernetes clusters and 1000+ users across AWS, GCP and Azure, building observability platforms, and tuning autoscaling and FinOps to keep systems fast, reliable and cost-efficient.",
+    "I care about reproducible infrastructure (Terraform / Terragrunt), pipelines that ship safely (GitLab CI), and architectures that absorb growth without downtime. I'm making aliyah to Israel and looking for a team where I can bring that cloud-native expertise and keep growing.",
+  ],
 };
 
 export const expertise: Expertise[] = [

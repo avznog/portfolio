@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import type { TileId } from "@/lib/types";
-import { ArrowIcon } from "@/components/ui/icons";
+import { ExpandIcon } from "@/components/ui/icons";
 import { morphTransition } from "@/lib/motion";
 import { TilePreview, tileMeta } from "@/components/tiles";
 
@@ -32,8 +32,8 @@ export function BentoTile({
         <span className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">
           {meta.eyebrow}
         </span>
-        <span className="text-ink-faint opacity-0 transition-opacity group-hover:opacity-100">
-          <ArrowIcon width={16} height={16} />
+        <span className="text-ink-faint opacity-50 transition-all group-hover:scale-110 group-hover:text-accent group-hover:opacity-100">
+          <ExpandIcon width={16} height={16} />
         </span>
       </div>
       <h2 className="font-display text-lg font-semibold text-ink">

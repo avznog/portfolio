@@ -1,10 +1,10 @@
 export type TileId =
-  | "expertise"
-  | "projects"
+  | "hero"
   | "experience"
-  | "education"
+  | "projects"
   | "skills"
-  | "contact";
+  | "education"
+  | "resume";
 
 export type Expertise = {
   label: string;
