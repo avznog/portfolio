@@ -28,12 +28,12 @@ export function BentoGrid() {
   return (
     <LayoutGroup>
       <div
-        className={`mx-auto grid w-full max-w-7xl flex-1 auto-rows-min grid-cols-1 gap-4 transition-[filter] duration-300 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-12 lg:grid-rows-6 ${
+        className={`mx-auto grid w-full max-w-7xl flex-1 auto-rows-min grid-cols-1 gap-4 transition-[filter] duration-300 sm:grid-cols-2 lg:min-h-0 lg:auto-rows-fr lg:grid-cols-12 lg:grid-rows-6 ${
           active ? "blur-sm" : ""
         }`}
         aria-hidden={active ? true : undefined}
       >
-        <div className="min-w-0 sm:col-span-2 lg:col-span-5 lg:row-span-3">
+        <div className="min-w-0 lg:min-h-0 sm:col-span-2 lg:col-span-5 lg:row-span-3">
           <HeroTile onOpen={setActive} />
         </div>
 
