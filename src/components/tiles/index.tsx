@@ -14,6 +14,7 @@ import {
   skills,
 } from "@/lib/content";
 import { detailContainer, detailItem } from "@/lib/motion";
+import { brands } from "@/lib/brands";
 import type { TileId } from "@/lib/types";
 import { Pill } from "@/components/ui/Pill";
 import { ProjectCard } from "@/components/ui/ProjectCard";
@@ -113,7 +114,9 @@ export function TilePreview({ id }: { id: TileId }) {
           <div className="flex flex-wrap gap-1.5">
             {["Kubernetes", "Terraform", "AWS", "GCP", "GitLab CI", "Helm"].map(
               (s) => (
-                <Pill key={s}>{s}</Pill>
+                <Pill key={s} brand={brands[s]}>
+                  {s}
+                </Pill>
               ),
             )}
           </div>
@@ -271,7 +274,9 @@ function detailBody(id: TileId) {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((s) => (
-                  <Pill key={s}>{s}</Pill>
+                  <Pill key={s} brand={brands[s]}>
+                    {s}
+                  </Pill>
                 ))}
               </div>
             </motion.div>

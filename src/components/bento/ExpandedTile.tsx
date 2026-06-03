@@ -49,7 +49,7 @@ export function ExpandedTile({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 sm:p-8"
+      className="fixed inset-0 z-50 flex p-3 sm:p-5"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -61,9 +61,9 @@ export function ExpandedTile({
         aria-modal="true"
         aria-labelledby={headingId}
         transition={morphTransition}
-        className="relative my-auto w-full max-w-3xl rounded-lg border border-border bg-surface p-6 shadow-expanded sm:p-8"
+        className="relative mx-auto flex h-full w-full max-w-6xl flex-col overflow-hidden rounded-lg border border-border bg-surface shadow-expanded"
       >
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 pb-4 pt-6 sm:px-8 sm:pt-8">
           <div>
             <span className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">
               {meta.eyebrow}
@@ -86,7 +86,7 @@ export function ExpandedTile({
           </button>
         </div>
 
-        <div className="mt-6">
+        <div className="flex-1 overflow-y-auto px-6 pb-6 pt-4 sm:px-8 sm:pb-8">
           <TileDetail id={id} />
         </div>
       </motion.div>
