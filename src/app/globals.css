@@ -86,6 +86,16 @@ body {
   border-radius: var(--radius-sm);
 }
 
+/* Touch devices (phones/tablets): the animated blur blobs + per-tile
+   backdrop-filter cripple iOS Safari. Freeze the blob drift and shrink the
+   blur so the GPU stops re-rasterizing a huge filter every frame. */
+@media (hover: none) {
+  .blob {
+    animation: none !important;
+    filter: blur(60px) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
