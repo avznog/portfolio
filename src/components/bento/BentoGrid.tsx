@@ -8,11 +8,11 @@ import { BentoTile } from "./BentoTile";
 import { ExpandedTile } from "./ExpandedTile";
 
 const TILES: { id: TileId; className: string }[] = [
-  { id: "experience", className: "lg:col-span-6 lg:row-span-3" },
-  { id: "projects", className: "lg:col-span-3 lg:row-span-3" },
-  { id: "skills", className: "lg:col-span-3 lg:row-span-3" },
-  { id: "education", className: "lg:col-span-3 lg:row-span-3" },
-  { id: "resume", className: "lg:col-span-3 lg:row-span-3" },
+  { id: "experience", className: "lg:col-span-7 lg:row-span-3" },
+  { id: "skills", className: "lg:col-span-5 lg:row-span-3" },
+  { id: "projects", className: "lg:col-span-4 lg:row-span-3" },
+  { id: "education", className: "lg:col-span-3 lg:row-span-2" },
+  { id: "resume", className: "lg:col-span-3 lg:row-span-1" },
 ];
 
 export function BentoGrid() {
@@ -33,7 +33,7 @@ export function BentoGrid() {
         }`}
         aria-hidden={active ? true : undefined}
       >
-        <div className="min-w-0 sm:col-span-2 lg:col-span-6 lg:row-span-3">
+        <div className="min-w-0 sm:col-span-2 lg:col-span-5 lg:row-span-3">
           <HeroTile onOpen={setActive} />
         </div>
 

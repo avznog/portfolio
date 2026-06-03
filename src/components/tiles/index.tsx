@@ -43,44 +43,52 @@ export function TilePreview({ id }: { id: TileId }) {
   switch (id) {
     case "projects":
       return (
-        <div className="flex gap-2">
-          {projects.map((p) => (
-            <div
-              key={p.slug}
-              className="relative aspect-[4/3] min-w-0 flex-1 overflow-hidden rounded-md border border-border bg-surface-muted"
-            >
-              <Image
-                src={p.image}
-                alt={p.title}
-                fill
-                sizes="120px"
-                className="object-cover"
-              />
+        <div className="space-y-2">
+          <div className="flex gap-2">
+            {projects.map((p) => (
+              <div
+                key={p.slug}
+                className="relative aspect-[4/3] min-w-0 flex-1 overflow-hidden rounded-md border border-border bg-surface-muted"
+              >
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  sizes="120px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <p className="truncate font-mono text-xs text-ink-faint">
+            {projects.map((p) => p.title).join(" · ")}
+          </p>
+        </div>
+      );
+    case "experience":
+      return (
+        <div className="space-y-3">
+          {experience.map((item) => (
+            <div key={item.org} className="min-w-0">
+              <p className="truncate font-display text-base font-semibold text-ink">
+                {item.role}
+              </p>
+              <p className="truncate text-sm text-ink-soft">{item.org}</p>
+              <p className="font-mono text-xs text-ink-faint">{item.period}</p>
             </div>
           ))}
         </div>
       );
-    case "experience": {
-      const latest = experience[0];
-      return (
-        <div>
-          <p className="font-display text-base font-semibold text-ink">
-            {latest.role}
-          </p>
-          <p className="text-sm text-ink-soft">{latest.org}</p>
-          <p className="mt-1 font-mono text-xs text-ink-faint">
-            {latest.period}
-          </p>
-        </div>
-      );
-    }
     case "education":
       return (
-        <div className="space-y-1">
+        <div className="space-y-2">
           {education.map((e) => (
-            <p key={e.school} className="text-sm text-ink-soft">
-              <span className="font-medium text-ink">{e.school}</span>
-            </p>
+            <div key={e.school} className="min-w-0">
+              <p className="truncate font-medium text-ink">{e.school}</p>
+              <p className="truncate font-mono text-xs text-ink-faint">
+                {e.degree} · {e.period}
+              </p>
+            </div>
           ))}
         </div>
       );
@@ -103,19 +111,29 @@ export function TilePreview({ id }: { id: TileId }) {
             })}
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {["Kubernetes", "Terraform", "AWS", "GCP"].map((s) => (
-              <Pill key={s}>{s}</Pill>
-            ))}
+            {["Kubernetes", "Terraform", "AWS", "GCP", "GitLab CI", "Helm"].map(
+              (s) => (
+                <Pill key={s}>{s}</Pill>
+              ),
+            )}
           </div>
+          <p className="font-mono text-xs text-ink-faint">
+            Clouds · Orchestration · Observability · DevOps
+          </p>
         </div>
       );
     case "resume":
       return (
-        <div className="flex items-center gap-3 text-ink-soft">
-          <span className="text-accent">
-            <FileIcon width={22} height={22} />
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="shrink-0 text-accent">
+            <FileIcon width={26} height={26} />
           </span>
-          <span className="text-sm font-medium text-ink">View résumé</span>
+          <div className="min-w-0">
+            <p className="font-medium text-ink">Résumé</p>
+            <p className="truncate font-mono text-xs text-ink-faint">
+              PDF · download or view inline
+            </p>
+          </div>
         </div>
       );
   }

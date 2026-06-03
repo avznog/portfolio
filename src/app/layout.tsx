@@ -57,7 +57,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${display.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col" suppressHydrationWarning>
+      <body
+        className="flex min-h-full flex-col lg:h-screen lg:overflow-hidden"
+        suppressHydrationWarning
+      >
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-ink focus:shadow-hover"
