@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -32,7 +33,7 @@ import {
 export const tileMeta: Record<TileId, { eyebrow: string; title: string }> = {
   hero: { eyebrow: "About", title: "Benjamin Gonzva" },
   experience: { eyebrow: "Where I've worked", title: "Experience" },
-  projects: { eyebrow: "Selected work", title: "Projects" },
+  projects: { eyebrow: "Selected work", title: "Personal Projects" },
   skills: { eyebrow: "What I do", title: "Skills & Expertise" },
   education: { eyebrow: "Background", title: "Education" },
   resume: { eyebrow: "PDF", title: "Resume" },
@@ -44,51 +45,61 @@ export function TilePreview({ id }: { id: TileId }) {
   switch (id) {
     case "projects":
       return (
-        <div className="space-y-2">
-          <div className="flex gap-2">
-            {projects.map((p) => (
-              <div
-                key={p.slug}
-                className="relative aspect-[4/3] min-w-0 flex-1 overflow-hidden rounded-md border border-border bg-surface-muted"
-              >
+        <div className="space-y-2.5">
+          {projects.map((p) => (
+            <div key={p.slug} className="flex items-center gap-3">
+              <div className="relative aspect-[16/10] w-24 shrink-0 overflow-hidden rounded-md border border-border bg-surface-muted">
                 <Image
                   src={p.image}
                   alt={p.title}
                   fill
-                  sizes="120px"
+                  sizes="96px"
                   className="object-cover"
                 />
               </div>
-            ))}
-          </div>
-          <p className="truncate font-mono text-xs text-ink-faint">
-            {projects.map((p) => p.title).join(" · ")}
-          </p>
+              <p className="truncate text-sm font-medium text-ink">
+                {p.title}
+              </p>
+            </div>
+          ))}
         </div>
       );
     case "experience":
       return (
-        <div className="space-y-3">
+        <div className="space-y-4">
           {experience.map((item) => (
-            <div key={item.org} className="min-w-0">
+            <div key={item.org} className="min-w-0 space-y-1">
               <p className="truncate font-display text-base font-semibold text-ink">
                 {item.role}
               </p>
               <p className="truncate text-sm text-ink-soft">{item.org}</p>
               <p className="font-mono text-xs text-ink-faint">{item.period}</p>
+              {item.summary && (
+                <p className="text-sm leading-relaxed text-ink-soft">
+                  {item.summary}
+                </p>
+              )}
+              {item.stack && item.stack.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {item.stack.slice(0, 4).map((s) => (
+                    <Pill key={s} brand={brands[s]}>
+                      {s}
+                    </Pill>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
       );
     case "education":
       return (
-        <div className="space-y-2">
+        <div className="space-y-3">
           {education.map((e) => (
             <div key={e.school} className="min-w-0">
-              <p className="truncate font-medium text-ink">{e.school}</p>
-              <p className="truncate font-mono text-xs text-ink-faint">
-                {e.degree} · {e.period}
-              </p>
+              <p className="font-medium text-ink">{e.school}</p>
+              <p className="font-mono text-xs text-ink-faint">{e.degree}</p>
+              <p className="font-mono text-xs text-ink-faint">{e.period}</p>
             </div>
           ))}
         </div>
@@ -177,7 +188,7 @@ function detailBody(id: TileId) {
               <ContactRow
                 icon={<PhoneIcon />}
                 label={contact.phone}
-                href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                href={`sms:${contact.phone.replace(/\s/g, "")}`}
               />
               <ContactRow
                 icon={<GithubIcon />}
@@ -216,11 +227,17 @@ function detailBody(id: TileId) {
     case "education":
       return (
         <div className="space-y-4">
-          {education.map((e) => (
+          {education.map((e, i) => (
             <motion.div
               key={e.school}
               variants={detailItem}
-              className="rounded-md border border-border bg-surface p-4"
+              className="rounded-md border border-l-4 border-border bg-surface px-4 py-3"
+              style={{
+                borderLeftColor: [
+                  "var(--color-accent)",
+                  "var(--color-accent-sky)",
+                ][i % 2],
+              }}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-x-3">
                 <h3 className="font-display text-lg font-semibold text-ink">
@@ -242,116 +259,140 @@ function detailBody(id: TileId) {
       );
     case "skills":
       return (
-        <div className="space-y-6">
-          <motion.div variants={detailItem} className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-5">
+          <motion.div
+            variants={detailItem}
+            className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          >
             {expertise.map((e) => {
               const Icon = expertiseIcons[e.icon];
               return (
                 <div
                   key={e.label}
-                  className="rounded-md border border-border bg-surface p-4"
+                  className="rounded-md border border-border bg-surface p-3"
                 >
                   <span className="text-accent">
-                    <Icon width={22} height={22} />
+                    <Icon width={20} height={20} />
                   </span>
-                  <h3 className="mt-2 font-display text-base font-semibold text-ink">
+                  <h3 className="mt-1.5 font-display text-sm font-semibold text-ink">
                     {e.label}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                  <p className="mt-1 text-xs leading-relaxed text-ink-soft">
                     {e.blurb}
                   </p>
                 </div>
               );
             })}
           </motion.div>
-          {skills.map((group) => (
-            <motion.div key={group.label} variants={detailItem}>
-              <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
-                {group.label}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((s) => (
-                  <Pill key={s} brand={brands[s]}>
-                    {s}
-                  </Pill>
-                ))}
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto]">
+            <div className="space-y-4">
+              {skills.map((group) => (
+                <motion.div key={group.label} variants={detailItem}>
+                  <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
+                    {group.label}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((s) => (
+                      <Pill key={s} brand={brands[s]}>
+                        {s}
+                      </Pill>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div
+              variants={detailItem}
+              className="space-y-4 border-t border-border pt-4 lg:min-w-48 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0"
+            >
+              <div>
+                <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
+                  Certifications
+                </h3>
+                <ul className="space-y-1 text-sm text-ink-soft">
+                  {certifications.map((c) => (
+                    <li key={c}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
+                  Languages
+                </h3>
+                <ul className="space-y-1 text-sm text-ink-soft">
+                  {languages.map((l) => (
+                    <li key={l}>{l}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
-          ))}
-          <motion.div
-            variants={detailItem}
-            className="grid gap-6 border-t border-border pt-6 sm:grid-cols-2"
-          >
-            <div>
-              <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
-                Certifications
-              </h3>
-              <ul className="space-y-1 text-sm text-ink-soft">
-                {certifications.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-2 font-mono text-xs uppercase tracking-wide text-ink-faint">
-                Languages
-              </h3>
-              <ul className="space-y-1 text-sm text-ink-soft">
-                {languages.map((l) => (
-                  <li key={l}>{l}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+          </div>
         </div>
       );
     case "resume":
-      return (
-        <div className="space-y-4">
-          <motion.div variants={detailItem} className="flex flex-wrap gap-3">
-            <a
-              href={contact.resumeUrl}
-              download
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
-            >
-              <FileIcon width={16} height={16} /> Download PDF
-            </a>
-            <a
-              href={contact.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent"
-            >
-              Open in new tab <ArrowIcon width={16} height={16} />
-            </a>
-          </motion.div>
-          <motion.div
-            variants={detailItem}
-            className="overflow-hidden rounded-md border border-border bg-surface-muted"
-          >
-            <object
-              data={contact.resumeUrl}
-              type="application/pdf"
-              className="h-[70vh] w-full"
-              aria-label="Resume PDF"
-            >
-              <div className="p-6 text-center text-sm text-ink-soft">
-                Your browser can&apos;t display the PDF inline.{" "}
-                <a
-                  href={contact.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent underline"
-                >
-                  Open the resume in a new tab
-                </a>
-                .
-              </div>
-            </object>
-          </motion.div>
-        </div>
-      );
+      return <ResumeDetail />;
   }
+}
+
+function ResumeDetail() {
+  const [showPdf, setShowPdf] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowPdf(true), 350);
+    return () => clearTimeout(t);
+  }, []);
+
+  return (
+    <div className="space-y-4">
+      <motion.div variants={detailItem} className="flex flex-wrap gap-3">
+        <a
+          href={contact.resumeUrl}
+          download
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
+        >
+          <FileIcon width={16} height={16} /> Download PDF
+        </a>
+        <a
+          href={contact.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent"
+        >
+          Open in new tab <ArrowIcon width={16} height={16} />
+        </a>
+      </motion.div>
+      <motion.div
+        variants={detailItem}
+        className="overflow-hidden rounded-md border border-border bg-surface-muted"
+      >
+        {showPdf ? (
+          <object
+            data={contact.resumeUrl}
+            type="application/pdf"
+            className="h-[70vh] w-full"
+            aria-label="Resume PDF"
+          >
+            <div className="p-6 text-center text-sm text-ink-soft">
+              Your browser can&apos;t display the PDF inline.{" "}
+              <a
+                href={contact.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline"
+              >
+                Open the resume in a new tab
+              </a>
+              .
+            </div>
+          </object>
+        ) : (
+          <div className="flex h-[70vh] w-full items-center justify-center text-sm text-ink-faint">
+            Loading preview…
+          </div>
+        )}
+      </motion.div>
+    </div>
+  );
 }
 
 function ContactRow({

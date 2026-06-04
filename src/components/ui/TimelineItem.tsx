@@ -1,4 +1,6 @@
 import type { ExperienceItem } from "@/lib/types";
+import { brands } from "@/lib/brands";
+import { Pill } from "./Pill";
 
 export function TimelineItem({ item }: { item: ExperienceItem }) {
   return (
@@ -25,6 +27,15 @@ export function TimelineItem({ item }: { item: ExperienceItem }) {
           </li>
         ))}
       </ul>
+      {item.stack && item.stack.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {item.stack.map((s) => (
+            <Pill key={s} brand={brands[s]}>
+              {s}
+            </Pill>
+          ))}
+        </div>
+      )}
     </li>
   );
 }

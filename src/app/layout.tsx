@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { FluidBackground } from "@/components/background/FluidBackground";
 import { Footer } from "@/components/layout/Footer";
 
@@ -70,6 +71,7 @@ export default function RootLayout({
         <FluidBackground />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

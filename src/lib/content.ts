@@ -11,66 +11,71 @@ export const hero = {
   name: "Benjamin Gonzva",
   title: "Cloud / DevOps Engineer",
   statement:
-    "Cloud / DevOps Engineer with 2+ years managing multi-cloud production infrastructure. Relocating to Israel (making aliyah) — seeking a role where I can bring my cloud-native expertise to a fast-moving engineering team, and contribute to Israel's growth.",
+    "Cloud / DevOps Engineer at Sia Partners for 2+ years, operating multi-cloud production infrastructure at scale. Relocating to Israel for my aliyah — eager to bring cloud-native expertise to a fast-moving engineering team and contribute to the country's growth.",
   bio: [
-    "I'm a Cloud / DevOps Engineer with 2+ years operating multi-cloud production infrastructure at scale — administering 15 Kubernetes clusters and 1000+ users across AWS, GCP and Azure, building observability platforms, and tuning autoscaling and FinOps to keep systems fast, reliable and cost-efficient.",
-    "I care about reproducible infrastructure (Terraform / Terragrunt), pipelines that ship safely (GitLab CI), and architectures that absorb growth without downtime. I'm making aliyah to Israel and looking for a team where I can bring that cloud-native expertise and keep growing.",
+    "I want to make myself genuinely useful — and above all to contribute to the State of Israel, putting the skills I have to work where they matter most.",
+    "I operate production infrastructure every day: cloud resources, observability stacks, upgrades and zero-downtime migrations. Most of my work centers on Kubernetes, deploying applications at scale.",
+    "I've worked extensively across AWS and GCP — designing architectures and infrastructure and shipping them with IaC and CI/CD.",
+    "I'm looking for an environment with real scale and technical depth, where I can keep growing and put my skills to use.",
+    "Outside work I'm an all-round tech enthusiast — space exploration, aviation, mechanics and cars — and a self-taught guitarist.",
   ],
 };
 
 export const expertise: Expertise[] = [
   {
-    label: "CI/CD Pipelines",
+    label: "Cloud Architecture",
     blurb:
-      "Automated build, test and deploy pipelines (GitLab CI) shipping changes safely and fast.",
-    icon: "pipeline",
+      "Designing and building infrastructure on demand across AWS and GCP — the right resources for each need.",
+    icon: "microservices",
   },
   {
     label: "Infrastructure as Code",
     blurb:
-      "Terraform & Terragrunt for reproducible, version-controlled multi-cloud infrastructure.",
+      "Building with Terraform & Terragrunt and deploying with Helm — reproducible, version-controlled infrastructure.",
     icon: "terraform",
   },
   {
     label: "Kubernetes Deployments",
     blurb:
-      "Helm / Helmfile, autoscaling with Karpenter, and operating production clusters at scale.",
+      "Operating production clusters at scale — a core part of my day-to-day work.",
     icon: "kubernetes",
   },
   {
-    label: "Scalable Microservices",
+    label: "CI/CD & DevOps",
     blurb:
-      "Designing architectures that absorb growing compute, data and traffic without downtime.",
-    icon: "microservices",
+      "Automated pipelines that ship changes safely and fast, plus the DevOps tooling around them.",
+    icon: "pipeline",
   },
 ];
 
-// TODO (Benjamin): replace placeholder copy/links with real project details.
 export const projects: Project[] = [
   {
     slug: "prospectix",
     title: "Prospectix",
-    blurb: "Project description — to be provided.",
+    blurb:
+      "A CRM I built for Junior ISEP to power their telemarketing — a searchable prospect database that tracks every lead from first call to signed contract, with templated emails and team goal-tracking.",
     image: "/projects/prospectix.png",
-    tags: ["TODO"],
+    tags: ["Angular", "NestJS", "PostgreSQL", "Docker"],
     liveUrl: undefined,
-    repoUrl: undefined,
+    repoUrl: "https://github.com/avznog/prospectix",
   },
   {
     slug: "hippochat",
     title: "Hippochat",
-    blurb: "Project description — to be provided.",
+    blurb:
+      "A new way to live long-distance relationships — an app designed to make the distance disappear.",
     image: "/projects/hippochat.webp",
-    tags: ["TODO"],
+    tags: ["React", "NestJS"],
     liveUrl: undefined,
-    repoUrl: undefined,
+    repoUrl: "https://github.com/avznog/hippochat",
   },
   {
-    slug: "cabinet",
-    title: "Cabinet",
-    blurb: "Project description — to be provided.",
-    image: "/projects/cabinet.png",
-    tags: ["TODO"],
+    slug: "memoirs",
+    title: "Grandmother's Memoirs",
+    blurb:
+      "A book I wrote with my brother to preserve our grandmother's memoirs — her life, in her own words.",
+    image: "/projects/memoirs.svg",
+    tags: ["Writing", "Family"],
     liveUrl: undefined,
     repoUrl: undefined,
   },
@@ -82,24 +87,40 @@ export const experience: ExperienceItem[] = [
     org: "Sia Partners",
     period: "Feb 2024 — Present",
     location: "Consulting Firm",
+    summary:
+      "Operating 15 production Kubernetes clusters and building multi-cloud infrastructure on AWS at scale.",
     bullets: [
-      "Administered the company's multi-cloud infrastructure (AWS, GCP, Azure) — 1000+ users, 15 Kubernetes clusters, 50 nodes, networking, GitLab and organizations.",
-      "Deployed, operated and scaled a full observability stack (Thanos, Grafana via Crossplane, Loki, OTEL) providing real-time metrics, logs and alerting across 70 platforms and 4 products.",
-      "Optimized Kubernetes autoscaling with Karpenter and deployed a FinOps AI agent achieving a 10% cost reduction.",
-      "Scaled infrastructure to bear the load of 70 custom-made platforms — growing compute, databases and traffic without downtime.",
-      "Led the team to build a technical roadmap aligned with the company's strategic goals.",
-      "Managed an R&D lab, creating and promoting squads for small projects.",
+      "Operate 15 production Kubernetes clusters hosting 70+ in-house microservice platforms, scaling compute, data and traffic without downtime.",
+      "Design and build cloud infrastructure on demand — primarily on AWS (VPC, EKS, EC2, ECS, ECR, RDS, Lambda) — provisioning the right resources for each project and client.",
+      "Built a full observability stack (OpenTelemetry, Grafana via Crossplane, Thanos, Loki) delivering real-time metrics, logs and alerting.",
+      "Delivered zero-downtime production upgrades — for example, migrating PostgreSQL 13 to 18 using read replicas.",
+      "Shipped software billed through the AWS Marketplace and deployed FinOps agents to optimize cloud spend.",
+      "Co-authored the team's 6-month technical roadmap, aligning top-management strategy with the team's technical vision, and helped recruit French and Indian engineers.",
+    ],
+    stack: [
+      "Kubernetes",
+      "AWS",
+      "Terraform",
+      "Helm",
+      "Grafana",
+      "OTEL",
+      "Docker",
+      "Linux",
     ],
   },
   {
     role: "Tech Lead & Board Member",
     org: "Junior ISEP (Junior-Entreprise)",
     period: "Mar 2022 — Jul 2023",
+    summary:
+      "Led a 4-engineer team, built an in-house CRM, and ran a student training program.",
     bullets: [
-      "Administered and managed a small (school) company: development roadmap and a 20-person project-manager team.",
-      "Built a CRM used daily by 40 people (Angular, NestJS & PostgreSQL), deployed with Docker.",
-      "Led a 6-month program backed by Saint-Gobain, Alten, PwC and IEE teaching 20 first-year students web tools (NestJS, React) through building a PWA for an association.",
+      "Led a 4-engineer team and administered a 4-server Proxmox cluster for a student-run company serving real clients.",
+      "Built Prospectix, a CRM (Angular, NestJS, PostgreSQL, Docker) used company-wide for telemarketing — prospect database, full lead lifecycle from first call to signed contract, and templated emails.",
+      "Designed and ran a 6-month training program for 20 students with Alten, Saint-Gobain, PwC and ISEP's IEE — teaching React and NestJS to build a website for a nonprofit.",
+      "Managed and trained a 20-person project-management team and co-built the company's 3-year strategic roadmap with the board.",
     ],
+    stack: ["Angular", "NestJS", "PostgreSQL", "Docker", "Proxmox"],
   },
 ];
 
@@ -120,24 +141,12 @@ export const education: EducationItem[] = [
 
 export const skills: SkillGroup[] = [
   {
-    label: "Clouds",
-    items: [
-      "AWS · EKS",
-      "EC2",
-      "VPC",
-      "RDS",
-      "IAM",
-      "S3",
-      "CloudFront",
-      "Lambda",
-      "SageMaker",
-      "ECR",
-      "ECS",
-      "GCP · Cloud SQL",
-      "GCS",
-      "GKE",
-      "GCE",
-    ],
+    label: "AWS",
+    items: ["EKS", "ECS", "EC2", "S3", "RDS", "ECR", "Lambda", "VPC"],
+  },
+  {
+    label: "Google Cloud",
+    items: ["GKE", "GCE", "Cloud SQL", "GCS", "IAM"],
   },
   {
     label: "Orchestration",
@@ -145,11 +154,11 @@ export const skills: SkillGroup[] = [
   },
   {
     label: "Observability",
-    items: ["Thanos", "OTEL", "Loki", "Grafana"],
+    items: ["OTEL", "Grafana", "Thanos", "Loki"],
   },
   {
     label: "DevOps",
-    items: ["Terraform", "Terragrunt", "Linux", "GitLab CI", "Bash"],
+    items: ["Terraform", "Terragrunt", "GitLab CI", "Bash", "Linux"],
   },
   {
     label: "Practices",
@@ -157,15 +166,11 @@ export const skills: SkillGroup[] = [
   },
 ];
 
-export const certifications: string[] = [
-  "SCRUM Master — PSM I Certified",
-  "Scaleway Pre-Sales Partner",
-];
+export const certifications: string[] = ["SCRUM Master — PSM I Certified"];
 
 export const languages: string[] = [
   "French — native",
   "English — fluent",
-  "Hebrew — Ulpan",
 ];
 
 export const contact: Contact = {

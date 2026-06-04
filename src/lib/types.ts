@@ -27,7 +27,9 @@ export type ExperienceItem = {
   org: string;
   period: string;
   location?: string;
+  summary?: string;
   bullets: string[];
+  stack?: string[];
 };
 
 export type EducationItem = {

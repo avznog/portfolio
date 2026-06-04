@@ -38,7 +38,7 @@ export function HeroTile({
       <div className="flex items-start gap-4">
         <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border">
           <Image
-            src="/ben.png"
+            src="/me.jpg"
             alt="Benjamin Gonzva"
             fill
             sizes="56px"
@@ -64,7 +64,7 @@ export function HeroTile({
         <a
           href={`mailto:${contact.email}`}
           onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
+          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
         >
           Get in touch <ArrowIcon width={16} height={16} />
         </a>

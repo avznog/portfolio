@@ -1,0 +1,38 @@
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grandmother's Memoirs book">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6d9c9"/>
+      <stop offset="0.5" stop-color="#c9c2f0"/>
+      <stop offset="1" stop-color="#bfdcf4"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="250" y1="120" x2="390" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f4f4ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <g transform="translate(320 200)">
+    <g filter="url(#none)">
+      <!-- open book -->
+      <path d="M-110 -64 C -70 -84 -20 -84 0 -68 C 20 -84 70 -84 110 -64 L 110 70 C 70 52 20 52 0 68 C -20 52 -70 52 -110 70 Z" fill="url(#cover)" stroke="#1c1c22" stroke-opacity="0.12" stroke-width="2"/>
+      <path d="M0 -68 L0 68" stroke="#1c1c22" stroke-opacity="0.18" stroke-width="2"/>
+      <!-- left text lines -->
+      <g stroke="#7c6fe0" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round">
+        <path d="M-92 -44 H-20"/>
+        <path d="M-92 -24 H-20"/>
+        <path d="M-92 -4 H-28"/>
+        <path d="M-92 16 H-20"/>
+        <path d="M-92 36 H-36"/>
+      </g>
+      <!-- right text lines -->
+      <g stroke="#54545e" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round">
+        <path d="M20 -44 H92"/>
+        <path d="M20 -24 H92"/>
+        <path d="M28 -4 H92"/>
+        <path d="M20 16 H92"/>
+        <path d="M20 36 H80"/>
+      </g>
+    </g>
+  </g>
+  <text x="320" y="350" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="600" fill="#1c1c22" fill-opacity="0.7">Memoirs</text>
+</svg>
