@@ -26,7 +26,7 @@ export function BentoTile({
       whileHover={reduce ? undefined : { y: -3 }}
       transition={morphTransition}
       aria-label={`Open ${meta.title}`}
-      className={`group relative flex min-w-0 lg:min-h-0 flex-col gap-3 overflow-hidden rounded-lg border border-border bg-surface/80 p-5 text-left shadow-rest lg:backdrop-blur-sm transition-shadow hover:shadow-hover ${className ?? ""}`}
+      className={`group relative flex min-w-0 lg:min-h-0 flex-col gap-3 overflow-hidden rounded-lg border border-border bg-surface/90 p-5 text-left shadow-rest transition-shadow hover:shadow-hover ${className ?? ""}`}
     >
       <div className="flex items-center justify-between">
         <span className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">
@@ -39,8 +39,9 @@ export function BentoTile({
       <h2 className="font-display text-lg font-semibold text-ink">
         {meta.title}
       </h2>
-      <div className="min-h-0 flex-1">
+      <div className="relative min-h-0 flex-1 overflow-hidden">
         <TilePreview id={id} />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-surface/90 to-transparent" />
       </div>
     </motion.button>
   );

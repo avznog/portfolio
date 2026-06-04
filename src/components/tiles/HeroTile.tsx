@@ -29,7 +29,7 @@ export function HeroTile({
       whileHover={reduce ? undefined : { y: -3 }}
       transition={morphTransition}
       aria-label="Open About Benjamin Gonzva"
-      className="group relative flex h-full w-full cursor-pointer flex-col justify-between gap-6 overflow-hidden rounded-lg border border-border bg-surface/80 p-6 text-left shadow-rest backdrop-blur-sm transition-shadow hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="group relative flex h-full w-full cursor-pointer flex-col justify-between gap-6 overflow-hidden rounded-lg border border-border bg-surface/90 p-6 text-left shadow-rest transition-shadow hover:shadow-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
       <span className="absolute right-5 top-5 text-ink-faint opacity-50 transition-all group-hover:scale-110 group-hover:text-accent group-hover:opacity-100">
         <ExpandIcon width={16} height={16} />
