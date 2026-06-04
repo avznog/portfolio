@@ -48,7 +48,7 @@ export function ExpandedTile({
   }, [onClose]);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 flex p-3 sm:p-5">
+    <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5">
       <motion.div
         layoutId={`tile-${id}`}
         ref={ref}
@@ -56,7 +56,7 @@ export function ExpandedTile({
         aria-modal="true"
         aria-labelledby={headingId}
         transition={morphTransition}
-        className="pointer-events-auto relative mx-auto flex h-full w-full max-w-6xl flex-col overflow-hidden rounded-lg border border-border bg-surface shadow-expanded"
+        className="pointer-events-auto relative flex max-h-full w-full max-w-6xl flex-col overflow-hidden rounded-lg border border-border bg-surface shadow-expanded"
       >
         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-6 pb-4 pt-6 sm:px-8 sm:pt-8">
           <div>
