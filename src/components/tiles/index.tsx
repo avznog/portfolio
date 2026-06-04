@@ -35,7 +35,7 @@ export const tileMeta: Record<TileId, { eyebrow: string; title: string }> = {
   projects: { eyebrow: "Selected work", title: "Projects" },
   skills: { eyebrow: "What I do", title: "Skills & Expertise" },
   education: { eyebrow: "Background", title: "Education" },
-  resume: { eyebrow: "PDF", title: "Résumé" },
+  resume: { eyebrow: "PDF", title: "Resume" },
 };
 
 /* ---------- PREVIEWS (compact, shown in the grid) ---------- */
@@ -129,14 +129,11 @@ export function TilePreview({ id }: { id: TileId }) {
       return (
         <div className="flex min-w-0 items-center gap-3">
           <span className="shrink-0 text-accent">
-            <FileIcon width={26} height={26} />
+            <FileIcon width={22} height={22} />
           </span>
-          <div className="min-w-0">
-            <p className="font-medium text-ink">Résumé</p>
-            <p className="truncate font-mono text-xs text-ink-faint">
-              PDF · download or view inline
-            </p>
-          </div>
+          <p className="truncate font-mono text-xs text-ink-faint">
+            PDF · download or view inline
+          </p>
         </div>
       );
   }
@@ -336,7 +333,7 @@ function detailBody(id: TileId) {
               data={contact.resumeUrl}
               type="application/pdf"
               className="h-[70vh] w-full"
-              aria-label="Résumé PDF"
+              aria-label="Resume PDF"
             >
               <div className="p-6 text-center text-sm text-ink-soft">
                 Your browser can&apos;t display the PDF inline.{" "}
@@ -346,7 +343,7 @@ function detailBody(id: TileId) {
                   rel="noopener noreferrer"
                   className="text-accent underline"
                 >
-                  Open the résumé in a new tab
+                  Open the resume in a new tab
                 </a>
                 .
               </div>

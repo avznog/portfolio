@@ -84,7 +84,7 @@ export function HeroTile({
           }}
           className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent"
         >
-          <FileIcon width={16} height={16} /> Résumé
+          <FileIcon width={16} height={16} /> Resume
         </span>
       </div>
     </motion.div>

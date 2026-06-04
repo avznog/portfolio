@@ -62,7 +62,13 @@ export function BentoGrid() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {active && <ExpandedTile id={active} onClose={() => setActive(null)} />}
+        {active && (
+          <ExpandedTile
+            key={active}
+            id={active}
+            onClose={() => setActive(null)}
+          />
+        )}
       </AnimatePresence>
     </LayoutGroup>
   );
