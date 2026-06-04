@@ -26,16 +26,17 @@ const icon = (i: { hex: string; path: string }): Brand => ({
 });
 
 export const brands: Record<string, Brand> = {
-  // No simple-icons mark for AWS (trademark) — brand color only.
+  // AWS — no simple-icons mark (trademark). Pills use AWS's official
+  // architecture-icon category colors so each service reads distinctly.
   AWS: { hex: "#FF9900" },
-  EKS: { hex: "#FF9900" },
-  ECS: { hex: "#FF9900" },
-  EC2: { hex: "#FF9900" },
-  RDS: { hex: "#FF9900" },
-  ECR: { hex: "#FF9900" },
-  Lambda: { hex: "#FF9900" },
-  VPC: { hex: "#FF9900" },
-  S3: { hex: "#FF9900" },
+  EC2: { hex: "#ED7100" }, // Compute — orange
+  Lambda: { hex: "#ED7100" }, // Compute — orange
+  EKS: { hex: "#ED7100" }, // Containers — orange
+  ECS: { hex: "#ED7100" }, // Containers — orange
+  ECR: { hex: "#ED7100" }, // Containers — orange
+  S3: { hex: "#7AA116" }, // Storage — green
+  RDS: { hex: "#C925D1" }, // Database — magenta
+  VPC: { hex: "#8C4FFF" }, // Networking — purple
 
   // Google Cloud services — brand color only (no per-service simple-icons marks).
   GCP: icon(siGooglecloud),

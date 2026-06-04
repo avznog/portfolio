@@ -116,8 +116,11 @@ export function TilePreview({ id }: { id: TileId }) {
             {expertise.map((e) => {
               const Icon = expertiseIcons[e.icon];
               return (
-                <div key={e.label} className="flex min-w-0 items-center gap-2">
-                  <span className="shrink-0 text-accent">
+                <div
+                  key={e.label}
+                  className="flex min-w-0 items-center gap-2.5 rounded-md border border-border bg-surface px-3 py-1.5"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
                     <Icon width={16} height={16} />
                   </span>
                   <span className="truncate text-sm font-medium text-ink">
@@ -274,24 +277,26 @@ function detailBody(id: TileId) {
         <div className="space-y-5">
           <motion.div
             variants={detailItem}
-            className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-4 sm:grid-cols-2"
           >
             {expertise.map((e) => {
               const Icon = expertiseIcons[e.icon];
               return (
                 <div
                   key={e.label}
-                  className="rounded-md border border-border bg-surface p-3"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"
                 >
-                  <span className="text-accent">
-                    <Icon width={20} height={20} />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
+                    <Icon width={24} height={24} />
                   </span>
-                  <h3 className="mt-1.5 font-display text-sm font-semibold text-ink">
-                    {e.label}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-ink-soft">
-                    {e.blurb}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-display text-base font-semibold text-ink">
+                      {e.label}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                      {e.blurb}
+                    </p>
+                  </div>
                 </div>
               );
             })}
