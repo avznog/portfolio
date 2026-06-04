@@ -63,7 +63,7 @@ export const projects: Project[] = [
     slug: "hippochat",
     title: "Hippochat",
     blurb:
-      "A new way to live long-distance relationships — an app designed to make the distance disappear.",
+      "A new way to live long-distance relationships — an app designed to make the distance disappear, with messaging, daily mood sharing and fun features.",
     image: "/projects/hippochat.webp",
     tags: ["React", "NestJS"],
     liveUrl: undefined,
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     slug: "memoirs",
     title: "Grandmother's Memoirs",
     blurb:
-      "A book I wrote with my brother to preserve our grandmother's memoirs — her life, in her own words.",
+      "A book I wrote with my brother to preserve our grandmother's memoirs — her life, in her own words, written so they may never be forgotten. From recording, to transcribing and printing.",
     image: "/projects/memoirs.svg",
     tags: ["Writing", "Family"],
     liveUrl: undefined,

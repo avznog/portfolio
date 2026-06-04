@@ -46,7 +46,7 @@ export function ProjectCard({ project }: { project: Project }) {
   );
 
   const className =
-    "group flex flex-col overflow-hidden rounded-md border border-border bg-surface";
+    "group flex h-full flex-col overflow-hidden rounded-md border border-border bg-surface";
 
   if (href) {
     return (

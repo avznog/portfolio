@@ -45,9 +45,9 @@ export function TilePreview({ id }: { id: TileId }) {
   switch (id) {
     case "projects":
       return (
-        <div className="space-y-2.5">
+        <div className="flex h-full flex-col justify-between gap-3">
           {projects.map((p) => (
-            <div key={p.slug} className="flex items-center gap-3">
+            <div key={p.slug} className="flex min-w-0 items-center gap-3">
               <div className="relative aspect-[16/10] w-24 shrink-0 overflow-hidden rounded-md border border-border bg-surface-muted">
                 <Image
                   src={p.image}
@@ -57,9 +57,14 @@ export function TilePreview({ id }: { id: TileId }) {
                   className="object-cover"
                 />
               </div>
-              <p className="truncate text-sm font-medium text-ink">
-                {p.title}
-              </p>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-ink">
+                  {p.title}
+                </p>
+                <p className="line-clamp-2 text-xs leading-relaxed text-ink-soft">
+                  {p.blurb}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -106,7 +111,7 @@ export function TilePreview({ id }: { id: TileId }) {
       );
     case "skills":
       return (
-        <div className="space-y-3">
+        <div className="flex h-full flex-col justify-between gap-3">
           <div className="grid grid-cols-2 gap-2">
             {expertise.map((e) => {
               const Icon = expertiseIcons[e.icon];
@@ -123,16 +128,23 @@ export function TilePreview({ id }: { id: TileId }) {
             })}
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {["Kubernetes", "Terraform", "AWS", "GCP", "GitLab CI", "Helm"].map(
-              (s) => (
-                <Pill key={s} brand={brands[s]}>
-                  {s}
-                </Pill>
-              ),
-            )}
+            {[
+              "Kubernetes",
+              "Terraform",
+              "GCP",
+              "Docker",
+              "Helm",
+              "Grafana",
+              "GitLab CI",
+              "Linux",
+            ].map((s) => (
+              <Pill key={s} brand={brands[s]}>
+                {s}
+              </Pill>
+            ))}
           </div>
           <p className="font-mono text-xs text-ink-faint">
-            Clouds · Orchestration · Observability · DevOps
+            AWS · Google Cloud · Orchestration · Observability · DevOps
           </p>
         </div>
       );
@@ -210,7 +222,7 @@ function detailBody(id: TileId) {
       return (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
-            <motion.div key={p.slug} variants={detailItem}>
+            <motion.div key={p.slug} variants={detailItem} className="h-full">
               <ProjectCard project={p} />
             </motion.div>
           ))}
