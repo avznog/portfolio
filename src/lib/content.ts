@@ -167,7 +167,10 @@ export const skills: SkillGroup[] = [
   },
 ];
 
-export const certifications: string[] = ["SCRUM Master — PSM I Certified"];
+export const certifications: string[] = [
+  "SCRUM Master — PSM I Certified",
+  "AWS Solutions Architect Professional — in progress",
+];
 
 export const languages: string[] = [
   "French — native",
